@@ -1,10 +1,7 @@
 version: '2'
 services:
   symfony4php71:
-    # while it's under development phase, we cannot reach from docker hub
-    build:
-      context: #location of the local files
-      dockerfile: Dockerfile
+    image: pelso/symfony4.0-php7.1:unstable
     hostname: smyfony-4-php-71
     tty: true
     ports:
