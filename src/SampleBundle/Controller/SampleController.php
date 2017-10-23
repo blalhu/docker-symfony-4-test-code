@@ -4,6 +4,9 @@ namespace App\SampleBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Request;
+
 
 class SampleController extends Controller
 {
@@ -53,5 +56,10 @@ class SampleController extends Controller
                         </body>
                      </html>'
         );
+    }
+
+    public function uploadTestAction(Request $request)
+    {
+        return new JsonResponse(['request-size' => strlen($request)]);
     }
 }

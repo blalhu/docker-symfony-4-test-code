@@ -9,6 +9,7 @@ services:
      - "127.0.32.2:3281:8081" # nginx running prod
     volumes:
       - "../:/home/developer/project"
+      - "./nginx.conf:/etc/nginx/nginx.conf"
     networks:
       symfony_test_4_net:
         ipv4_address: 172.16.32.2

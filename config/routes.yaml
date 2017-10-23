@@ -10,3 +10,7 @@
 test:
     path: /test
     defaults: { _controller: 'App\SampleBundle\Controller\SampleController::testAction' }
+
+test_upload:
+    path: /upload-test
+    defaults: { _controller: 'App\SampleBundle\Controller\SampleController::uploadTestAction' }
