@@ -1,16 +1,3 @@
-#index:
-#    path: /
-#    defaults: { _controller: 'App\Controller\DefaultController::index' }
-
-# first, run composer req annotations
-#controllers:
-#    resource: ../src/Controller/
-#    type: annotation
-
-test:
-    path: /test
-    defaults: { _controller: 'App\SampleBundle\Controller\SampleController::testAction' }
-
-test_upload:
-    path: /upload-test
-    defaults: { _controller: 'App\SampleBundle\Controller\SampleController::uploadTestAction' }
+test_index:
+    path: /
+    controller: App\Controller\TestController::index

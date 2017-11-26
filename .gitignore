@@ -6,5 +6,4 @@
 /vendor/
 ###< symfony/framework-bundle ###
 
-# PhpStorm ignores
 /.idea
