@@ -11,7 +11,7 @@ class Test extends Controller
     public function techShowcase()
     {
         $mysqlVersionInfo = $this
-            ->get('doctrine.dbal.default_connection')
+            ->get('doctrine.dbal.conn_mysql_connection')
             ->executeQuery('SHOW VARIABLES LIKE "%version%";')
             ->fetchAll()
         ;
