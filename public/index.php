@@ -15,6 +15,9 @@ if (!isset($_SERVER['APP_ENV'])) {
     (new Dotenv())->load(__DIR__.'/../.env');
 }
 
+//force to use vars from .env
+(new Dotenv())->load(__DIR__.'/../.env');
+
 if ($_SERVER['APP_DEBUG'] ?? ('prod' !== ($_SERVER['APP_ENV'] ?? 'dev'))) {
     umask(0000);
 

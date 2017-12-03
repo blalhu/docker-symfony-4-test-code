@@ -10,7 +10,14 @@ class Test extends Controller
 
     public function techShowcase()
     {
-        return $this->render('test/tech-showcase.html.twig');
+        $mysqlVersionInfo = $this
+            ->get('doctrine.dbal.default_connection')
+            ->executeQuery('SHOW VARIABLES LIKE "%version%";')
+            ->fetchAll()
+        ;
+        return $this->render('test/tech-showcase.html.twig', [
+            'mysqlVersionInfo' => $mysqlVersionInfo
+        ]);
     }
 
 }

@@ -5,14 +5,24 @@ services:
     hostname: smyfony-4-php-71
     tty: true
     ports:
-     - "127.0.32.2:3280:8080" # nginx running dev
-     - "127.0.32.2:3281:8081" # nginx running prod
+     - "127.0.111.2:3280:8080" # nginx running dev
+     - "127.0.111.2:3281:8081" # nginx running prod
     volumes:
       - "../:/home/developer/project"
       - "./nginx.conf:/etc/nginx/nginx.conf"
     networks:
       symfony_test_4_net:
         ipv4_address: 172.16.32.2
+  mysql57:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "127.0.111.2:13306:3306"
+    networks:
+          symfony_test_4_net:
+            ipv4_address: 172.16.32.3
 
 networks:
   symfony_test_4_net:

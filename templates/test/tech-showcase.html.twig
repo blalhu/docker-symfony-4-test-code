@@ -1,5 +1,15 @@
 {% extends 'base.html.twig' %}
 {% block title %}tech showcase{% endblock %}
 {% block body %}
-    foo
+    <h2>MySql connection</h2>
+    <table>
+        <tbody>
+        {% for infoRow in mysqlVersionInfo %}
+            <tr>
+                <td>{{ infoRow.Variable_name }}</td>
+                <td>{{ infoRow.Value }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
 {% endblock %}
