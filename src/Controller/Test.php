@@ -26,8 +26,8 @@ class Test extends Controller
             ->fetchColumn()
         ;
         return $this->render('test/tech-showcase.html.twig', [
-            'mysqlVersionInfo' => $mysqlVersionInfo,
-            'pgsqlVersionInfo' => $pgsqlVersionInfo,
+            'mysqlVersionInfo'  => $mysqlVersionInfo,
+            'pgsqlVersionInfo'  => $pgsqlVersionInfo,
             'sqliteVersionInfo' => $sqliteVersionInfo,
         ]);
     }
