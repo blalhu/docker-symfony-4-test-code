@@ -20,9 +20,15 @@ class Test extends Controller
             ->executeQuery('SELECT version();')
             ->fetchColumn()
         ;
+        $sqliteVersionInfo = $this
+            ->get('doctrine.dbal.conn_sqlite_connection')
+            ->executeQuery('SELECT sqlite_version();')
+            ->fetchColumn()
+        ;
         return $this->render('test/tech-showcase.html.twig', [
             'mysqlVersionInfo' => $mysqlVersionInfo,
             'pgsqlVersionInfo' => $pgsqlVersionInfo,
+            'sqliteVersionInfo' => $sqliteVersionInfo,
         ]);
     }
 
