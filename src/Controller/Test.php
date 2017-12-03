@@ -15,8 +15,14 @@ class Test extends Controller
             ->executeQuery('SHOW VARIABLES LIKE "%version%";')
             ->fetchAll()
         ;
+        $pgsqlVersionInfo = $this
+            ->get('doctrine.dbal.conn_pgsql_connection')
+            ->executeQuery('SELECT version();')
+            ->fetchColumn()
+        ;
         return $this->render('test/tech-showcase.html.twig', [
-            'mysqlVersionInfo' => $mysqlVersionInfo
+            'mysqlVersionInfo' => $mysqlVersionInfo,
+            'pgsqlVersionInfo' => $pgsqlVersionInfo,
         ]);
     }
 

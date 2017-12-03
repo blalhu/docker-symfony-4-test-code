@@ -9,3 +9,8 @@ doctrine:
                 server_version: '5.7'
                 charset: utf8mb4
                 url: '%env(resolve:MYSQL_DATABASE_URL)%'
+            conn_pgsql:
+                driver: 'pdo_pqsql'
+                server_version: '10.1'
+                charset: utf8
+                url: '%env(resolve:PGSQL_DATABASE_URL)%'

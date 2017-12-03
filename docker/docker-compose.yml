@@ -23,6 +23,16 @@ services:
     networks:
           symfony_test_4_net:
             ipv4_address: 172.16.32.3
+  postgres101:
+      image: postgres:10.1
+      restart: always
+      environment:
+        POSTGRES_PASSWORD: root
+      ports:
+        - "127.0.111.2:15432:5432"
+      networks:
+            symfony_test_4_net:
+              ipv4_address: 172.16.32.4
 
 networks:
   symfony_test_4_net:
