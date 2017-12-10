@@ -1,7 +1,7 @@
 version: '2'
 services:
   symfony4php71:
-    image: pelso/symfony4.0-php7.1:unstable
+    image: pelso/symfony4.0-php7.1
     hostname: smyfony-4-php-71
     tty: true
     ports:
